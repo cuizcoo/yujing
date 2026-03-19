@@ -1,0 +1,22 @@
+{
+  "name": "vue-echarts-h5",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "echarts": "^5.5.0",
+    "vue": "^3.4.21",
+    "vue-echarts": "^6.6.9"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-legacy": "^5.4.3",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "terser": "^5.46.1",
+    "vite": "^5.2.0"
+  }
+}
