@@ -98,7 +98,7 @@
                 <td>{{ item.waterLevel }}</td>
                 <td>{{ currentTab === 'flow' ? item.year1 : item.year1 / 10 }}</td>
                 <td>{{ currentTab === 'flow' ? item.year3 : item.year3 / 10 }}</td>
-                <td>{{ currentTab === 'flow' ? item.yearI : item.yearI / 10 }}</td>
+                <td>{{ currentTab === 'flow' ? item.yearI : (item.yearI / 10) }}</td>
                 <td class="text-danger">{{ currentTab === 'flow' ? item.decay : (item.decay / 10).toFixed(1) }}</td>
                 <td class="text-danger">{{ (item.decayRate * 100).toFixed(1) }}%</td>
                 <td>
