@@ -72,7 +72,16 @@ router.beforeEach(async (to, from, next) => {
   // 7.存储 routerName 做按钮权限筛选
   authStore.setRouteName(to.name as string);
 
-  // 8.正常访问页面
+  // 8.如果访问的是不存在的路由，重定向到 404 页面
+  if (router.getRoutes().every(route => route.name !== to.name)) {
+    // 动态路由添加后，由于 Vue-Router 的机制，直接 next({ ...to, replace: true }) 是标准做法，
+    // 但如果有极端情况，我们在这里只捕获明确没有任何匹配的非正常路由。
+    if (to.matched.length === 0) {
+      return next({ path: "/404", replace: true });
+    }
+  }
+
+  // 9.正常访问页面
   next();
 });
 

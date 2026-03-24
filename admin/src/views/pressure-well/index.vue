@@ -109,8 +109,8 @@ const dataList = ref<any[]>([]);
 const fetchData = async () => {
   try {
     // 使用封装的 http 请求，自动携带 token 并走 proxy 代理
-    const response = await http.get("/pressure-well/data", {}, { loading: false });
-    if (response.code === 200) {
+    const response = await http.get<any>("/pressure-well/data", {}, { loading: false });
+    if (Number(response.code) === 200) {
       dataList.value = response.data;
     }
   } catch (error) {
